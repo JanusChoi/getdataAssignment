@@ -70,6 +70,9 @@ testdata <- cbind(stest, ytest, xtest)
 ##combind traindata & testdata
 finaldata <- rbind(traindata, testdata)
 
+################################################################
+##                    Generate average                        ##
+################################################################
 ##get average of each variable for each activity and each subject.
 finalavg <- aggregate(finaldata[,4:82], list(finaldata$volunteersno, finaldata$activity), mean)
 names(finalavg)[1] <- "subject"
